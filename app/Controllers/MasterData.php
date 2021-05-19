@@ -18,8 +18,18 @@ class MasterData extends BaseController
     public function index()
     {
         $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
+        $data['title'] = 'Data Kategori Berkas';
         $data['kat'] = $this->m_md->get_kategori_berkas();
         // dd($data['akun']);
         return view('Admin/Pages/DataTable/data_kategori_berkas', $data);
+    }
+
+    public function unit()
+    {
+        $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
+        $data['title'] = 'Data Unit';
+        $data['unit'] = $this->m_md->get_unit();
+        // dd($data['akun']);
+        return view('Admin/Pages/DataTable/data_unit', $data);
     }
 }

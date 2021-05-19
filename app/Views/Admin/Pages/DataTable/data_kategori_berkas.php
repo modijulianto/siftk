@@ -23,7 +23,6 @@
                             <table id="table" data-toggle="table" data-pagination="true" data-search="true" data-show-columns="true" data-show-pagination-switch="true" data-show-refresh="true" data-key-events="true" data-show-toggle="true" data-resizable="true" data-cookie="true" data-cookie-id-table="saveId" data-show-export="true" data-click-to-select="true" data-toolbar="#toolbar">
                                 <thead>
                                     <tr>
-                                        <th data-field="state" data-checkbox="true"></th>
                                         <th data-field="id">No</th>
                                         <th data-field="name" data-editable="true">Nama Kategori Berkas</th>
                                         <th data-field="action">Action</th>
@@ -33,7 +32,6 @@
                                     <?php $i = 1; ?>
                                     <?php foreach ($kat as $row) { ?>
                                         <tr>
-                                            <td></td>
                                             <td><?= $i++; ?></td>
                                             <td><?= $row['nama_kategori_berkas']; ?></td>
                                             <td class="datatable-ct">

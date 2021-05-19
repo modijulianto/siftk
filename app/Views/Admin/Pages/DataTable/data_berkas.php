@@ -8,7 +8,7 @@
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1><span class="table-project-n">DATA</span> ADMIN</h1>
+                            <h1><span class="table-project-n">DATA</span> BERKAS</h1>
                         </div>
                     </div>
                     <div class="sparkline13-graph">
@@ -24,18 +24,22 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id">No</th>
-                                        <th data-field="name" data-editable="true">Nama Admin</th>
-                                        <th data-field="email" data-editable="true">Email</th>
+                                        <th data-field="name" data-editable="true">Nama Berkas</th>
+                                        <th data-field="unit" data-editable="true">Unit</th>
+                                        <th data-field="kategori_berkas" data-editable="true">Kategori Berkas</th>
+                                        <th data-field="tahun" data-editable="true">Tahun</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($admin as $row) { ?>
+                                    <?php foreach ($berkas as $row) { ?>
                                         <tr>
                                             <td><?= $i++; ?></td>
-                                            <td><?= $row['nama_user']; ?></td>
-                                            <td><?= $row['email']; ?></td>
+                                            <td><?= $row['nama_berkas']; ?></td>
+                                            <td><?= $row['nama_unit']; ?></td>
+                                            <td><?= $row['nama_kategori_berkas']; ?></td>
+                                            <td><?= $row['tahun']; ?></td>
                                             <td class="datatable-ct">
                                                 <a href="" class="btn btn-primary"><i class="fa fa-pencil" style="color: white;"></i></a>
                                                 <a href="" class="btn btn-danger"><i class="fa fa-trash" style="color: white;"></i></a>

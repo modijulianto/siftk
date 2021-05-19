@@ -8,7 +8,7 @@
                 <div class="sparkline13-list">
                     <div class="sparkline13-hd">
                         <div class="main-sparkline13-hd">
-                            <h1><span class="table-project-n">DATA</span> ADMIN</h1>
+                            <h1><span class="table-project-n">DATA</span> UNIT</h1>
                         </div>
                     </div>
                     <div class="sparkline13-graph">
@@ -24,18 +24,16 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id">No</th>
-                                        <th data-field="name" data-editable="true">Nama Admin</th>
-                                        <th data-field="email" data-editable="true">Email</th>
+                                        <th data-field="name" data-editable="true">Nama Unit</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php $i = 1; ?>
-                                    <?php foreach ($admin as $row) { ?>
+                                    <?php foreach ($unit as $row) { ?>
                                         <tr>
                                             <td><?= $i++; ?></td>
-                                            <td><?= $row['nama_user']; ?></td>
-                                            <td><?= $row['email']; ?></td>
+                                            <td><?= $row['nama_unit']; ?></td>
                                             <td class="datatable-ct">
                                                 <a href="" class="btn btn-primary"><i class="fa fa-pencil" style="color: white;"></i></a>
                                                 <a href="" class="btn btn-danger"><i class="fa fa-trash" style="color: white;"></i></a>

@@ -6,6 +6,11 @@ use CodeIgniter\Model;
 
 class M_master_data extends Model
 {
+    public function get_admin()
+    {
+        $this->orderBy('id_user', 'DESC');
+        return $this->findAll();
+    }
 
     public function get_kategori_berkas()
     {
@@ -13,9 +18,9 @@ class M_master_data extends Model
             ->get()->getResultArray();
     }
 
-    public function get_admin()
+    public function get_unit()
     {
-        $this->orderBy('id_user', 'DESC');
-        return $this->findAll();
+        return $this->db->table('tb_unit')
+            ->get()->getResultArray();
     }
 }
