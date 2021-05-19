@@ -21,4 +21,16 @@ class M_admin extends Model
         $this->orderBy('id_user', 'DESC');
         return $this->findAll();
     }
+
+    public function get_user_wh($id)
+    {
+        $this->where(['id_user' => $id]);
+        return $this->first();
+    }
+
+    public function get_user_md5($id)
+    {
+        $this->where('md5(id_user)', $id);
+        return $this->first();
+    }
 }

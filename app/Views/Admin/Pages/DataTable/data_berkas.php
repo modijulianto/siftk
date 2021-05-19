@@ -24,10 +24,10 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id">No</th>
-                                        <th data-field="name" data-editable="true">Nama Berkas</th>
-                                        <th data-field="unit" data-editable="true">Unit</th>
-                                        <th data-field="kategori_berkas" data-editable="true">Kategori Berkas</th>
-                                        <th data-field="tahun" data-editable="true">Tahun</th>
+                                        <th data-field="name">Nama Berkas</th>
+                                        <th data-field="unit">Unit</th>
+                                        <th data-field="kategori_berkas">Kategori Berkas</th>
+                                        <th data-field="tahun">Tahun</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>

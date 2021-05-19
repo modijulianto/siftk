@@ -24,7 +24,7 @@
                                 <thead>
                                     <tr>
                                         <th data-field="id">No</th>
-                                        <th data-field="name" data-editable="true">Nama Unit</th>
+                                        <th data-field="name">Nama Unit</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>

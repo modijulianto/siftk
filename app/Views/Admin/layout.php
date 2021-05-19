@@ -41,7 +41,7 @@
   <link rel="stylesheet" href="/css/educate-custon-icon.css">
   <!-- morrisjs CSS
 		============================================ -->
-  <link rel="stylesheet" href="/css/morris/js/morris.css">
+  <link rel="stylesheet" href="/css/morrisjs/morris.css">
   <!-- mCustomScrollbar CSS
 		============================================ -->
   <link rel="stylesheet" href="/css/scrollbar/jquery.mCustomScrollbar.min.css">
@@ -63,6 +63,12 @@
 		============================================ -->
   <link rel="stylesheet" href="/css/data-table/bootstrap-table.css">
   <link rel="stylesheet" href="/css/data-table/bootstrap-editable.css">
+  <!-- modals CSS
+		============================================ -->
+  <link rel="stylesheet" href="/css/modals.css">
+  <!-- forms CSS
+		============================================ -->
+  <link rel="stylesheet" href="/css/form/all-type-forms.css">
   <!-- style CSS
 		============================================ -->
   <link rel="stylesheet" href="/style.css">
@@ -72,6 +78,9 @@
   <!-- modernizr JS
 		============================================ -->
   <script src="/js/vendor/modernizr-2.8.3.min.js"></script>
+  <!-- jquery
+		============================================ -->
+  <script src="/js/vendor/jquery-1.12.4.min.js"></script>
 </head>
 
 <body>
@@ -85,9 +94,6 @@
     <?= $this->include('Admin/Components/footer'); ?>
   </div>
 
-  <!-- jquery
-		============================================ -->
-  <script src="/js/vendor/jquery-1.12.4.min.js"></script>
   <!-- bootstrap JS
 		============================================ -->
   <script src="/js/bootstrap.min.js"></script>
@@ -140,6 +146,10 @@
 		============================================ -->
   <script src="/js/chart/jquery.peity.min.js"></script>
   <script src="/js/peity/peity-active.js"></script>
+  <!-- SweetAlert
+		============================================ -->
+  <script language="JavaScript" type="text/javascript" src="/js/sweetalert/sweetalert2.all.min.js"></script>
+  <script language="JavaScript" type="text/javascript" src="/js/sweetalert/myscript.js"></script>
   <!-- tab JS
 		============================================ -->
   <script src="/js/tab.js"></script>
@@ -149,6 +159,9 @@
   <!-- main JS
 		============================================ -->
   <script src="/js/main.js"></script>
+  <!-- Custom JS
+		============================================ -->
+  <script src="/js/custom-script.js"></script>
 </body>
 
 </html>
