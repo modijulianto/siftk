@@ -109,6 +109,48 @@ $(function () {
     // ========================== END UNIT ==========================
 
 
+    // ========================== BERKAS ==========================
+    $(".tombolTambahBerkas").on("click", function () {
+        $(".modal-title").html("Tambah Data Berkas");
+        $("#tombolModal").html("Tambah");
+        $(".modal-body form").attr("action", "/Berkas/save");
+
+        $("#id").val("");
+        $("#nama").val("");
+    });
+
+    $('.tombolUbahBerkas').on('click', function () {
+        $('.modal-title').html('Ubah Data Berkas');
+        $('#tombolModal').html('Ubah');
+        $('.modal-body form').attr('action', '/Berkas/save_update');
+
+        const id = $(this).data('id');
+
+        $.ajax({
+            url: '/Berkas/get_berkas_by_id',
+            data: {
+                id: id
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function (data) {
+                $('#id').val(data.id_berkas);
+                $('#id_unit').val(data.id_unit);
+                $('#id_kategori_berkas').val(data.id_kategori_berkas);
+                $('#nama').val(data.nama_berkas);
+                $('#berkas_lama').val(data.berkas);
+                $('#tahun').val(data.tahun);
+                if (data.status == 1) {
+                    document.getElementById("berlaku").checked = true;
+                } else {
+                    document.getElementById("tidak_berlaku").checked = true;
+                }
+            }
+        });
+    });
+    // ========================== END BERKAS ==========================
+
+
     $('.tombol-hapus').on('click', function (e) {
 
         e.preventDefault();   //mematikan fungsi default

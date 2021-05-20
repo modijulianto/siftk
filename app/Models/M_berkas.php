@@ -18,4 +18,10 @@ class M_berkas extends Model
         $this->orderBy('id_berkas', 'DESC');
         return $this->findAll();
     }
+
+    public function get_berkas_wh($id)
+    {
+        $this->where(['id_berkas' => $id]);
+        return $this->first();
+    }
 }
