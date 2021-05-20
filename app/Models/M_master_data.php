@@ -55,6 +55,40 @@ class M_master_data extends Model
         return $this->db->table('tb_unit')
             ->get()->getResultArray();
     }
+
+    public function get_unit_md5($id)
+    {
+        return $this->db->table('tb_unit')
+            ->where(['md5(id_unit)' => $id])
+            ->get()->getRowArray();
+    }
+
+    public function get_unit_wh($id)
+    {
+        return $this->db->table('tb_unit')
+            ->where(['id_unit' => $id])
+            ->get()->getRowArray();
+    }
+
+    public function save_unit()
+    {
+        $data = [
+            'nama_unit' => $_POST['nama']
+        ];
+
+        return $this->db->table('tb_unit')->insert($data);
+    }
+
+    public function update_unit()
+    {
+        $data = [
+            'nama_unit' => $_POST['nama']
+        ];
+
+        return $this->db->table('tb_unit')
+            ->where('id_unit', $_POST['id'])
+            ->update($data);
+    }
     // ==================== END UNIT ====================
 
 

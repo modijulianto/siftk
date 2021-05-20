@@ -24,7 +24,6 @@ class MasterData extends BaseController
         $data['title'] = 'Data Kategori Berkas';
         $data['kat'] = $this->m_md->get_kategori_berkas();
         $data['validation'] = $this->validation;
-        // dd($data['akun']);
         return view('Admin/Pages/DataTable/data_kategori_berkas', $data);
     }
 
@@ -81,8 +80,54 @@ class MasterData extends BaseController
         $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
         $data['title'] = 'Data Unit';
         $data['unit'] = $this->m_md->get_unit();
-        // dd($data['akun']);
+        $data['validation'] = $this->validation;
         return view('Admin/Pages/DataTable/data_unit', $data);
+    }
+
+    public function save_unit()
+    {
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => ['required' => 'Nama unit berkas harus diisi']
+            ],
+        ])) {
+            return redirect()->to('/MasterData/unit')->withInput();
+        }
+
+        $this->m_md->save_unit();
+        session()->setFlashdata('message', 'Ditambahkan');
+        return redirect()->to('/MasterData/unit');
+    }
+
+    public function update_unit()
+    {
+        echo json_encode($this->m_md->get_unit_wh($_POST['id']));
+    }
+
+    public function save_update_unit()
+    {
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => ['required' => 'Nama unit berkas harus diisi']
+            ],
+        ])) {
+            return redirect()->to('/MasterData/unit')->withInput();
+        }
+
+        $this->m_md->update_unit();
+        session()->setFlashdata('message', 'Diubah');
+        return redirect()->to('/MasterData/unit');
+    }
+
+    public function delete_unit($id)
+    {
+        $data = $this->m_md->get_unit_md5($id);
+        $where = array('id_unit' => $data['id_unit']);
+        $table = 'tb_unit';
+        $this->m_md->delete_($table, $where);
+        return redirect()->to('/MasterData/unit');
     }
     // END UNIT
 }

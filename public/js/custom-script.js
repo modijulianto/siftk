@@ -4,7 +4,6 @@ $(function () {
         $(".modal-title").html("Tambah Data Admin");
         $("#tombolModal").html("Tambah");
         $(".modal-body form").attr("action", "/Admin/save");
-        // alert($('.modal-body form').attr('action'));
 
         // show form input
         $(".form-password").show();
@@ -49,7 +48,6 @@ $(function () {
         $(".modal-title").html("Tambah Data Kategori Berkas");
         $("#tombolModal").html("Tambah");
         $(".modal-body form").attr("action", "/MasterData/save_kategori");
-        // alert($('.modal-body form').attr('action'));
 
         $("#id").val("");
         $("#nama").val("");
@@ -76,6 +74,39 @@ $(function () {
         });
     });
     // ========================== END KATEGORI BERKAS ==========================
+
+
+    // ========================== UNIT ==========================
+    $(".tombolTambahUnit").on("click", function () {
+        $(".modal-title").html("Tambah Data Unit");
+        $("#tombolModal").html("Tambah");
+        $(".modal-body form").attr("action", "/MasterData/save_unit");
+
+        $("#id").val("");
+        $("#nama").val("");
+    });
+
+    $('.tombolUbahUnit').on('click', function () {
+        $('.modal-title').html('Ubah Data Unit');
+        $('#tombolModal').html('Ubah');
+        $('.modal-body form').attr('action', '/MasterData/save_update_unit');
+
+        const id = $(this).data('id');
+
+        $.ajax({
+            url: '/MasterData/update_unit',
+            data: {
+                id: id
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function (data) {
+                $('#id').val(data.id_unit);
+                $('#nama').val(data.nama_unit);
+            }
+        });
+    });
+    // ========================== END UNIT ==========================
 
 
     $('.tombol-hapus').on('click', function (e) {

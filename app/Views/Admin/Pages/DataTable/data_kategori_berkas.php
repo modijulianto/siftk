@@ -65,7 +65,7 @@
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="basic-login-inner modal-basic-inner">
-                                <form action="/MasterData/save_berkas" method="POST">
+                                <form action="/MasterData/save_kategori" method="POST">
                                     <input type="hidden" id="id" name="id">
                                     <div class="form-group-inner">
                                         <div class="row">
