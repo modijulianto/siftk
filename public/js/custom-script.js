@@ -1,5 +1,5 @@
 $(function () {
-    // AJAX ADMIN
+    // ========================== ADMIN ==========================
     $(".tombolTambahAdmin").on("click", function () {
         $(".modal-title").html("Tambah Data Admin");
         $("#tombolModal").html("Tambah");
@@ -16,7 +16,6 @@ $(function () {
         $("#retypePassword").val("");
     });
 
-    //UPDATE ADMIN
     $('.tombolUbahAdmin').on('click', function () {
         $('.modal-title').html('Ubah Data Admin');
         $('#tombolModal').html('Ubah');
@@ -42,6 +41,41 @@ $(function () {
             }
         });
     });
+    // ========================== END ADMIN ==========================
+
+
+    // ========================== KATEGORI BERKAS ==========================
+    $(".tombolTambahKategori").on("click", function () {
+        $(".modal-title").html("Tambah Data Kategori Berkas");
+        $("#tombolModal").html("Tambah");
+        $(".modal-body form").attr("action", "/MasterData/save_kategori");
+        // alert($('.modal-body form').attr('action'));
+
+        $("#id").val("");
+        $("#nama").val("");
+    });
+
+    $('.tombolUbahKategori').on('click', function () {
+        $('.modal-title').html('Ubah Data Kategori Berkas');
+        $('#tombolModal').html('Ubah');
+        $('.modal-body form').attr('action', '/MasterData/save_update_kategori');
+
+        const id = $(this).data('id');
+
+        $.ajax({
+            url: '/MasterData/update_kategori',
+            data: {
+                id: id
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function (data) {
+                $('#id').val(data.id_kategori_berkas);
+                $('#nama').val(data.nama_kategori_berkas);
+            }
+        });
+    });
+    // ========================== END KATEGORI BERKAS ==========================
 
 
     $('.tombol-hapus').on('click', function (e) {

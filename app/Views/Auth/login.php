@@ -70,6 +70,7 @@
       <div class="content-error">
         <div class="hpanel">
           <div class="panel-body">
+            <?= session()->getFlashdata('message'); ?>
             <div class="text-center">
               <img src="/img/logo-ftk.png" alt="Logo FTK" width="150px">
             </div>

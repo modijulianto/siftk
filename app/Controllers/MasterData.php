@@ -13,17 +13,69 @@ class MasterData extends BaseController
     {
         $this->m_admin = new M_admin();
         $this->m_md = new M_master_data();
+        $this->validation = \Config\Services::validation();
     }
 
+
+    // ======================= KATEGORI BERKAS =======================
     public function index()
     {
         $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
         $data['title'] = 'Data Kategori Berkas';
         $data['kat'] = $this->m_md->get_kategori_berkas();
+        $data['validation'] = $this->validation;
         // dd($data['akun']);
         return view('Admin/Pages/DataTable/data_kategori_berkas', $data);
     }
 
+    public function save_kategori()
+    {
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => ['required' => 'Nama kategori berkas harus diisi']
+            ],
+        ])) {
+            return redirect()->to('/MasterData/kategori_berkas')->withInput();
+        }
+
+        $this->m_md->save_kategori_berkas();
+        session()->setFlashdata('message', 'Ditambahkan');
+        return redirect()->to('/MasterData/kategori_berkas');
+    }
+
+    public function update_kategori()
+    {
+        echo json_encode($this->m_md->get_kategori_wh($_POST['id']));
+    }
+
+    public function save_update_kategori()
+    {
+        if (!$this->validate([
+            'nama' => [
+                'rules' => 'required',
+                'errors' => ['required' => 'Nama kategori berkas harus diisi']
+            ],
+        ])) {
+            return redirect()->to('/MasterData/kategori_berkas')->withInput();
+        }
+
+        $this->m_md->update_kategori_berkas();
+        session()->setFlashdata('message', 'Diubah');
+        return redirect()->to('/MasterData/kategori_berkas');
+    }
+
+    public function delete_kategori_berkas($id)
+    {
+        $data = $this->m_md->get_kategori_berkas_md5($id);
+        $where = array('id_kategori_berkas' => $data['id_kategori_berkas']);
+        $table = 'tb_kategori_berkas';
+        $this->m_md->delete_($table, $where);
+        return redirect()->to('/MasterData/kategori_berkas');
+    }
+    // ======================= END KATEGORI BERKAS =======================
+
+    // UNIT
     public function unit()
     {
         $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
@@ -32,4 +84,5 @@ class MasterData extends BaseController
         // dd($data['akun']);
         return view('Admin/Pages/DataTable/data_unit', $data);
     }
+    // END UNIT
 }

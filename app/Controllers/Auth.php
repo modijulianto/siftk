@@ -40,11 +40,11 @@ class Auth extends BaseController
                 session()->set($data);
                 return redirect()->to('/Dashboard');
             } else {
-                session()->setFlashdata('registered', '<div class="alert alert-warning" role="alert"><b>Failed!</b> wrong password!</div>');
+                session()->setFlashdata('message', '<div class="alert alert-warning" role="alert"><b>Failed!</b> wrong password!</div>');
                 return redirect()->to('/Auth');
             }
         } else {
-            session()->setFlashdata('registered', '<div class="alert alert-warning" role="alert"><b>Failed!</b> your email is not registered!</div>');
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert"><b>Failed!</b> your email is not registered!</div>');
             return redirect()->to('/Auth');
         }
     }
