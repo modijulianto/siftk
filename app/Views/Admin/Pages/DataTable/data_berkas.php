@@ -30,6 +30,7 @@
                                         <th data-field="unit">Unit</th>
                                         <th data-field="kategori_berkas">Kategori Berkas</th>
                                         <th data-field="tahun">Tahun</th>
+                                        <th data-field="status">Status</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>
@@ -42,6 +43,13 @@
                                             <td><?= $row['nama_unit']; ?></td>
                                             <td><?= $row['nama_kategori_berkas']; ?></td>
                                             <td><?= $row['tahun']; ?></td>
+                                            <td>
+                                                <?php if ($row['status'] == 1) { ?>
+                                                    <center><span class="label label-success">Berlaku</span></center>
+                                                <?php } else { ?>
+                                                    <center><span class="label label-danger">Tidak Berlaku</span></center>
+                                                <?php } ?>
+                                            </td>
                                             <td class="datatable-ct">
                                                 <button type="button" class="btn btn-primary tombolUbahBerkas" data-id="<?= $row['id_berkas']; ?>" data-toggle="modal" data-target="#modalBerkas"><i class="fa fa-pencil" style="color: white;"></i></button>
                                                 <button href="/Berkas/delete/<?= md5($row['id_berkas']) ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></button>

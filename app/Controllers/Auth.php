@@ -40,11 +40,11 @@ class Auth extends BaseController
                 session()->set($data);
                 return redirect()->to('/Dashboard');
             } else {
-                session()->setFlashdata('message', '<div class="alert alert-warning" role="alert"><b>Failed!</b> wrong password!</div>');
+                session()->setFlashdata('message', '<div class="alert alert-warning" role="alert"><b>Failed!</b> email atau password yang anda masukkan salah!</div>');
                 return redirect()->to('/Auth');
             }
         } else {
-            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert"><b>Failed!</b> your email is not registered!</div>');
+            session()->setFlashdata('message', '<div class="alert alert-warning" role="alert"><b>Failed!</b> email atau password yang anda masukkan salah!</div>');
             return redirect()->to('/Auth');
         }
     }
@@ -57,7 +57,7 @@ class Auth extends BaseController
     public function logout()
     {
         session()->destroy();
-        session()->setFlashdata('registered', '<div class="alert alert-success" role="alert"><b>Congratulation!</b> you have been logout!</div>');
+        session()->setFlashdata('message', '<div class="alert alert-success" role="alert"><b>Congratulation!</b> logout berhasil!</div>');
         return redirect()->to('/Auth');
     }
 
