@@ -80,7 +80,7 @@
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="basic-login-inner modal-basic-inner">
                                 <form action="/Berkas/save" method="POST" enctype="multipart/form-data">
-                                    <input type="text" id="id" name="id">
+                                    <input type="hidden" id="id" name="id">
                                     <div class="form-group-inner">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -176,7 +176,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <input type="text" name="berkas_lama" id="berkas_lama">
+                                    <input type="hidden" name="berkas_lama" id="berkas_lama">
                                     <div class="login-btn-inner">
                                         <div class="row">
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12"></div>
