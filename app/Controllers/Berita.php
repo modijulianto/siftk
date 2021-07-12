@@ -21,19 +21,51 @@ class Berita extends BaseController
         $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
         $data['title'] = 'Data Berita';
         $data['berita'] = $this->m_berita->get_berita();
-        return view('Admin/Pages/DataTable/data_berita', $data);
+        return view('Admin/Content/DataTable/data_berita', $data);
     }
 
     public function tambah()
     {
         $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
         $data['title'] = 'Tambah Berita';
+        $data['kat'] = $this->m_berita->get_kategori_berita();
         $data['validation'] = $this->validation;
-        return view('Admin/Pages/Form/tambah_berita', $data);
+        return view('Admin/Content/Form/tambah_berita', $data);
     }
 
     public function save()
     {
-        dd($_POST);
+        if (!$this->validate([
+            'judul_berita' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Judul berita harus diisi!'
+                ]
+            ],
+            'kategori' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Pilih kategori berita!'
+                ]
+            ],
+            'isi_berita' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Isikan isi berita!'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/Berita/tambah')->withInput();
+        }
+
+        $this->m_berita->save([
+            'id_kategori_berita' => $_POST['kategori'],
+            'judul_berita' => $_POST['judul_berita'],
+            'isi_berita' => $_POST['isi_berita']
+        ]);
+
+        session()->setFlashdata('message', 'Ditambahkan');
+
+        return redirect()->to('Berita');
     }
 }

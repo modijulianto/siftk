@@ -16,6 +16,6 @@ class Dashboard extends BaseController
     {
         $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
         $data['title'] = 'Dashboard';
-        return view('Admin/Pages/dashboard', $data);
+        return view('Admin/Content/dashboard', $data);
     }
 }

@@ -27,7 +27,7 @@ class Berkas extends BaseController
         $data['unit'] = $this->m_md->get_unit();
         $data['kat'] = $this->m_md->get_kategori_berkas();
         $data['validation'] = $this->validation;
-        return view('Admin/Pages/DataTable/data_berkas', $data);
+        return view('Admin/Content/DataTable/data_berkas', $data);
     }
 
     public function save()

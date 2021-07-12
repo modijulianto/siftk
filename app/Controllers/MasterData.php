@@ -24,7 +24,7 @@ class MasterData extends BaseController
         $data['title'] = 'Data Kategori Berkas';
         $data['kat'] = $this->m_md->get_kategori_berkas();
         $data['validation'] = $this->validation;
-        return view('Admin/Pages/DataTable/data_kategori_berkas', $data);
+        return view('Admin/Content/DataTable/data_kategori_berkas', $data);
     }
 
     public function save_kategori()
@@ -81,7 +81,7 @@ class MasterData extends BaseController
         $data['title'] = 'Data Unit';
         $data['unit'] = $this->m_md->get_unit();
         $data['validation'] = $this->validation;
-        return view('Admin/Pages/DataTable/data_unit', $data);
+        return view('Admin/Content/DataTable/data_unit', $data);
     }
 
     public function save_unit()

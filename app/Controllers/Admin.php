@@ -20,7 +20,7 @@ class Admin extends BaseController
         $data['admin'] = $this->m_admin->get_admin();
         $data['validation'] = $this->validation;
         // dd($data['akun']);
-        return view('Admin/Pages/DataTable/data_admin', $data);
+        return view('Admin/Content/DataTable/data_admin', $data);
     }
 
     public function save()
