@@ -15,25 +15,25 @@ class Home extends BaseController
 	public function index()
 	{
 		$data['title'] = "SISTEM INFORMASI BEM FTK UNDIKSHA";
-		return view('Home/Content/beranda', $data);
+		return view('Front/Content/beranda', $data);
 	}
 
 	public function beasiswa()
 	{
 		$data['title'] = "Beasiswa | SISTEM INFORMASI BEM FTK UNDIKSHA";
 		$data['beasiswa'] = $this->m_home->get_beasiswa();
-		return view('Home/Content/beasiswa', $data);
+		return view('Front/Content/beasiswa', $data);
 	}
 
 	public function prestasi()
 	{
 		$data['title'] = "Prestasi | SISTEM INFORMASI BEM FTK UNDIKSHA";
-		return view('Home/Content/prestasi', $data);
+		return view('Front/Content/prestasi', $data);
 	}
 
 	public function seminar()
 	{
 		$data['title'] = "Seminar | SISTEM INFORMASI BEM FTK UNDIKSHA";
-		return view('Home/Content/seminar', $data);
+		return view('Front/Content/seminar', $data);
 	}
 }
