@@ -1,4 +1,4 @@
-<?= $this->extend('Home/layout'); ?>
+<?= $this->extend('Front/layout'); ?>
 <?= $this->section('content'); ?>
 <section id="slider">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">

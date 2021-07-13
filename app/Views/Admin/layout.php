@@ -81,6 +81,11 @@
   <!-- jquery
 		============================================ -->
   <script src="/js/vendor/jquery-1.12.4.min.js"></script>
+  <!-- bootstrap JS
+		============================================ -->
+  <script src="/js/bootstrap.min.js"></script>
+
+  <script src="<?php echo base_url('/tinymce/tinymce.js') ?>"></script>
 </head>
 
 <body>
@@ -94,9 +99,6 @@
     <?= $this->include('Admin/Components/footer'); ?>
   </div>
 
-  <!-- bootstrap JS
-		============================================ -->
-  <script src="/js/bootstrap.min.js"></script>
   <!-- wow JS
 		============================================ -->
   <script src="/js/wow.min.js"></script>

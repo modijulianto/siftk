@@ -35,6 +35,8 @@ class Berita extends BaseController
 
     public function save()
     {
+        // print($_FILES);
+        // dd($_POST);
         if (!$this->validate([
             'judul_berita' => [
                 'rules' => 'required',
@@ -66,6 +68,6 @@ class Berita extends BaseController
 
         session()->setFlashdata('message', 'Ditambahkan');
 
-        return redirect()->to('Berita');
+        return redirect()->to('/Berita');
     }
 }

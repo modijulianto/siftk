@@ -1,4 +1,4 @@
-<?= $this->extend('Home/layout'); ?>
+<?= $this->extend('Front/layout'); ?>
 <?= $this->section('content'); ?>
 <!-- Tentang Kami =========================================== -->
 <section class="beasiswa section-sm bg-beasiswa overly">

@@ -42,11 +42,11 @@
 	</div> -->
     <!-- end preloader -->
     <!-- Fixed Navigation ==================================== -->
-    <?= $this->include('Home/Components/navbar'); ?>
+    <?= $this->include('Front/Components/navbar'); ?>
     <!--End Fixed Navigation ==================================== -->
     <!--Home Slider ============================================= -->
     <?= $this->renderSection('content'); ?>
-    <?= $this->include('Home/Components/footer'); ?>
+    <?= $this->include('Front/Components/footer'); ?>
 
 
 
