@@ -36,4 +36,46 @@ class Home extends BaseController
 		$data['title'] = "Seminar | SISTEM INFORMASI BEM FTK UNDIKSHA";
 		return view('Front/Content/seminar', $data);
 	}
+
+	public function berkas()
+	{
+		$data['title'] = "Berkas | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		return view('Front/Content/berkas', $data);
+	}
+
+	public function detail()
+	{
+		$data['title'] = "Detail | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		return view('Front/Content/detail', $data);
+	}
+
+	public function kerumahtanggaan()
+	{
+		$data['title'] = "Kerumahtanggaan | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		return view('Front/Content/kerumahtanggaan', $data);
+	}
+
+	public function pendidikan_penalaran()
+	{
+		$data['title'] = "Pendidikan Penalaran | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		return view('Front/Content/pendidikan_penalaran', $data);
+	}
+
+	public function pengurus_inti()
+	{
+		$data['title'] = "Pengurus Inti | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		return view('Front/Content/pengurus_inti', $data);
+	}
+
+	public function psdm()
+	{
+		$data['title'] = "PSDM | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		return view('Front/Content/psdm', $data);
+	}
+
+	public function sosmas()
+	{
+		$data['title'] = "Sosial Masyarakat | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		return view('Front/Content/sosmas', $data);
+	}
 }

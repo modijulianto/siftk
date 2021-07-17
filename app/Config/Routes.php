@@ -37,6 +37,12 @@ $routes->get('/Auth/login', 'Auth::login');
 $routes->get('/beasiswa', 'Home::beasiswa');
 $routes->get('/prestasi', 'Home::prestasi');
 $routes->get('/seminar', 'Home::seminar');
+$routes->get('/pengurus_inti', 'Home::pengurus_inti');
+$routes->get('/pendidikan_penalaran', 'Home::pendidikan_penalaran');
+$routes->get('/psdm', 'Home::psdm');
+$routes->get('/kerumahtanggaan', 'Home::kerumahtanggaan');
+$routes->get('/sosmas', 'Home::sosmas');
+$routes->get('/berkas', 'Home::berkas');
 
 // ========== ADMIN ROUTES ==========
 $routes->get('/Dashboard', 'Dashboard::index', ['filter' => 'auth']);

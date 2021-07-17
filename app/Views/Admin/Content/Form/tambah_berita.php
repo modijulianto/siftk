@@ -98,7 +98,7 @@
             toolbar1: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
             toolbar2: 'print preview media | forecolor backcolor emoticons',
             image_advtab: true,
-            images_upload_url: '/tinymce_upload',
+            images_upload_url: '<?= base_url('/Berita/upload_tinymce'); ?>',
             file_picker_types: 'image',
             paste_data_images: true,
             relative_urls: false,

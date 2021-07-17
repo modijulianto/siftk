@@ -1,5 +1,6 @@
 <?= $this->extend('Front/layout'); ?>
 <?= $this->section('content'); ?>
+<!--Home Slider ============================================= -->
 <section id="slider">
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
         <!-- Indicators bullet -->
@@ -32,15 +33,15 @@
             <!-- end single slide -->
             <!-- Next slide -->
             <!-- <div class="item" style="background-image: url(img/FTK.jpg);">
-					<div class="carousel-caption">						
-						<ul class="social-links text-center">
-							<li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-							<li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-							<li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-							<li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
-						</ul>
-					</div>
-				</div> -->
+            <div class="carousel-caption">						
+                <ul class="social-links text-center">
+                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+                    <li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+                </ul>
+            </div>
+        </div> -->
             <!-- end Next slide -->
         </div>
         <!-- End Wrapper for slides -->
@@ -115,7 +116,7 @@
             <div class="col-md-12 text-center wow fadeInUp">
                 <h2>TENTANG KAMI</h2>
                 <br>
-                <p>Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan merupakan organisasi mahasiswa intra
+                <p> Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan merupakan organisasi mahasiswa intra
                     kampus yang bertanggung jawab untuk menerapkan hukum atau kebijakan lainnya yang berlaku pada
                     fakultas teknik dan kejuruan, undiksha.</p>
             </div>
@@ -124,7 +125,7 @@
 </section>
 <!-- End Tentang Kami ======================================== -->
 <!-- Visi & Misi ============================================= -->
-<section id="works" class="works clearfix bg-visi">
+<section id="visi" class="works clearfix bg-visi">
     <div class="container">
         <div class="row">
             <div class="sec-title text-center wow fadeInUp">
@@ -217,7 +218,6 @@
                     </div>
                 </form>
             </div>
-
         </div>
     </div>
 </section>

@@ -36,7 +36,6 @@
                                         <th data-field="id">No</th>
                                         <th data-field="name">Judul Berita</th>
                                         <th data-field="kategori">Kategori Berita</th>
-                                        <th data-field="isi">Isi Berita</th>
                                         <th data-field="action">Action</th>
                                     </tr>
                                 </thead>
@@ -47,10 +46,9 @@
                                             <td><?= $i++; ?></td>
                                             <td><?= $row['judul_berita']; ?></td>
                                             <td><?= $row['nama_kategori_berita']; ?></td>
-                                            <td><?= (str_word_count($row['isi_berita'])) > 10 ? substr($row['isi_berita'], 0, 50) . "..." : $row['isi_berita']; ?></td>
                                             <td class="datatable-ct">
-                                                <button type="button" class="btn btn-primary" data-id="<?= $row['id_berita']; ?>" data-toggle="modal" data-target="#modalAdmin"><i class="fa fa-pencil" style="color: white;"></i></button>
-                                                <button href="/Admin/delete/<?= md5($row['id_berita']) ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></button>
+                                                <a href="/Berita/update/<?= $row['id_berita']; ?>" type="button" class="btn btn-primary"><i class="fa fa-pencil" style="color: white;"></i></a>
+                                                <a href="/Admin/delete/<?= md5($row['id_berita']) ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>

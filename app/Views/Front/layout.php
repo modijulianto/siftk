@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <!-- Judul Halaman -->
-    <title></title>
+    <title><?= isset($title) ? $title : "Sistem Informasi BEM Fakultas Teknik dan Kejuruan"; ?></title>
     <!-- Pembuat -->
     <meta name="author" content="Putu Juniarta Eka Saputra">
     <meta name="viewport" content="width=device-width, initial-scale=1">

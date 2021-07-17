@@ -30,7 +30,7 @@ class Berita extends BaseController
         $data['title'] = 'Tambah Berita';
         $data['kat'] = $this->m_berita->get_kategori_berita();
         $data['validation'] = $this->validation;
-        return view('Admin/Content/Form/tambah_berita', $data);
+        return view('Admin/Content/Form/tambah_berita_ckeditor', $data);
     }
 
     public function save()
@@ -69,5 +69,59 @@ class Berita extends BaseController
         session()->setFlashdata('message', 'Ditambahkan');
 
         return redirect()->to('/Berita');
+    }
+
+    public function upload_tinymce()
+    {
+        $file = $this->request->getFile('file');
+
+        if ($file) {
+            return $file->move('upload/berita');
+        }
+    }
+
+    public function upload_ckeditor()
+    {
+        $validated = $this->validate([
+            'upload' => [
+                'uploaded[upload]',
+                'mime_in[upload,image/jpg,image/jpeg,image/png]',
+
+            ]
+        ]);
+
+        if ($validated) {
+            $file = $this->request->getFile('upload');
+            $fileName = $file->getRandomName();
+            $writePath = './upload/berita';
+            $file->move($writePath, $fileName);
+
+            $data = [
+                "uploaded" => true,
+                "url" => base_url('upload/berita/' . $fileName)
+            ];
+        } else {
+            $file = $this->request->getFile('upload');
+            $data = [
+                "uploaded" => false,
+                "error" => [
+                    "messages" => $file
+                ]
+            ];
+        }
+
+        return $this->response->setJSON($data);
+    }
+
+    public function update($id_berita)
+    {
+        $berita = $this->m_berita->find($id_berita);
+
+        $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
+        $data['title'] = 'Update Berita ' . $berita['judul_berita'];
+        $data['kat'] = $this->m_berita->get_kategori_berita();
+        $data['berita'] = $berita;
+        $data['validation'] = $this->validation;
+        return view('Admin/Content/Form/ubah_berita', $data);
     }
 }
