@@ -11,7 +11,7 @@
                             <h1><span class="table-project-n">TAMBAH</span> BERITA</h1>
                         </div>
                     </div>
-                    <form action="/Berita/save" method="POST" enctype="multipart/form-data">
+                    <form action="/Berita/save_update" method="POST" enctype="multipart/form-data">
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">

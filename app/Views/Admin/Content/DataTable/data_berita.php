@@ -47,8 +47,9 @@
                                             <td><?= $row['judul_berita']; ?></td>
                                             <td><?= $row['nama_kategori_berita']; ?></td>
                                             <td class="datatable-ct">
+                                                <a href="/Berita/detail/<?= $row['id_berita']; ?>" type="button" class="btn btn-info"><i class="fa fa-eye" style="color: white;"></i></a>
                                                 <a href="/Berita/update/<?= $row['id_berita']; ?>" type="button" class="btn btn-primary"><i class="fa fa-pencil" style="color: white;"></i></a>
-                                                <a href="/Admin/delete/<?= md5($row['id_berita']) ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></a>
+                                                <a href="/Berita/delete/<?= $row['id_berita']; ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></a>
                                             </td>
                                         </tr>
                                     <?php } ?>

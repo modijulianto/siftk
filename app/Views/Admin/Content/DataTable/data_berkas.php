@@ -52,7 +52,7 @@
                                             </td>
                                             <td class="datatable-ct">
                                                 <button type="button" class="btn btn-primary tombolUbahBerkas" data-id="<?= $row['id_berkas']; ?>" data-toggle="modal" data-target="#modalBerkas"><i class="fa fa-pencil" style="color: white;"></i></button>
-                                                <button href="/Berkas/delete/<?= md5($row['id_berkas']) ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></button>
+                                                <button href="/Berkas/delete/<?= $row['id_berkas'] ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></button>
                                             </td>
                                         </tr>
                                     <?php } ?>

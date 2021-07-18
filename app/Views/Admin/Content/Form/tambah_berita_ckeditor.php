@@ -73,8 +73,11 @@
     }
 </style>
 <script>
+    // import Indent from '/@ckeditor/ckeditor5-indent/src/indent';
     ClassicEditor
         .create(document.querySelector('#editor'), {
+            // plugins: [Indent],
+            // toolbar: ['indent'],
             ckfinder: {
                 uploadUrl: "<?= base_url('Berita/upload_ckeditor') ?>"
             }

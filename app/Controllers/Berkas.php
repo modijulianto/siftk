@@ -129,4 +129,21 @@ class Berkas extends BaseController
 
         return redirect()->to('/Berkas');
     }
+
+    public function delete($id_berkas)
+    {
+        $berkas = $this->m_berkas->find($id_berkas);
+        if ($berkas) {
+            if (file_exists('upload/' . $berkas['berkas'])) {
+                unlink('upload/' . $berkas['berkas']);
+            }
+            $this->m_berkas->delete($id_berkas);
+
+            session()->setFlashdata('message', 'Dihapus');
+            return redirect()->to('/Berkas');
+        } else {
+            $this->response->setStatusCode(404, "Berkas tidak ditemukan");
+            echo "Berkas tidak ditemukan";
+        }
+    }
 }

@@ -49,7 +49,10 @@ $routes->get('/Dashboard', 'Dashboard::index', ['filter' => 'auth']);
 $routes->get('/MasterData/kategori_berkas/', 'MasterData::index', ['filter' => 'auth']);
 $routes->get('/MasterData/unit/', 'MasterData::unit', ['filter' => 'auth']);
 $routes->get('/Berkas', 'Berkas::index', ['filter' => 'auth']);
+$routes->get('/Berkas/delete/(:any)', 'Berkas::delete/$1', ['filter' => 'auth']);
 $routes->get('/Berita', 'Berita::index', ['filter' => 'auth']);
+$routes->get('/Berita/delete/(:any)', 'Berita::delete/$1', ['filter' => 'auth']);
+$routes->get('/Berita/tambah', 'Berita::tambah', ['filter' => 'auth']);
 $routes->get('/Berita/tambah', 'Berita::tambah', ['filter' => 'auth']);
 // ========== END ADMIN ROUTES ==========
 

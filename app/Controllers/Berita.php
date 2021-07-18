@@ -30,7 +30,7 @@ class Berita extends BaseController
         $data['title'] = 'Tambah Berita';
         $data['kat'] = $this->m_berita->get_kategori_berita();
         $data['validation'] = $this->validation;
-        return view('Admin/Content/Form/tambah_berita_ckeditor', $data);
+        return view('Admin/Content/Form/tambah_berita', $data);
     }
 
     public function save()
@@ -65,20 +65,21 @@ class Berita extends BaseController
             'judul_berita' => $_POST['judul_berita'],
             'isi_berita' => $_POST['isi_berita']
         ]);
+        $id_berita = $this->m_berita->getInsertID();
 
         session()->setFlashdata('message', 'Ditambahkan');
 
-        return redirect()->to('/Berita');
+        return redirect()->to('/Berita/detail/' . $id_berita);
     }
 
-    public function upload_tinymce()
-    {
-        $file = $this->request->getFile('file');
+    // public function upload_tinymce()
+    // {
+    //     $file = $this->request->getFile('file');
 
-        if ($file) {
-            return $file->move('upload/berita');
-        }
-    }
+    //     if ($file) {
+    //         return $file->move('upload/berita');
+    //     }
+    // }
 
     public function upload_ckeditor()
     {
@@ -113,6 +114,38 @@ class Berita extends BaseController
         return $this->response->setJSON($data);
     }
 
+    public function upload_tinymce()
+    {
+        $validated = $this->validate([
+            'file' => [
+                'uploaded[file]',
+                'mime_in[file,image/jpg,image/jpeg,image/png]',
+
+            ]
+        ]);
+
+        if ($validated) {
+            $file = $this->request->getFile('file');
+            $fileName = $file->getRandomName();
+            $writePath = './upload/berita';
+            $file->move($writePath, $fileName);
+            $this->response->setContentType('application/json', 'utf-8');
+            return $this->response->setJSON(['location' => base_url('upload/berita/' . $fileName)]);
+        } else {
+            return $this->output->setHeader('HTTP/1.0 500 Server Error');
+        }
+
+        // return $this->response->setJSON($data);
+    }
+
+    public function detail($id_berita)
+    {
+        $data['akun'] = $this->m_admin->get_akun(session()->get('email'));
+        $data['title'] = 'Detail Berita';
+        $data['berita'] = $this->m_berita->join('tb_kategori_berita', 'tb_kategori_berita.id_kategori_berita=tb_berita.id_kategori_berita')->find($id_berita);
+        return view('Admin/Content/detail_berita', $data);
+    }
+
     public function update($id_berita)
     {
         $berita = $this->m_berita->find($id_berita);
@@ -123,5 +156,49 @@ class Berita extends BaseController
         $data['berita'] = $berita;
         $data['validation'] = $this->validation;
         return view('Admin/Content/Form/ubah_berita', $data);
+    }
+
+    public function save_update()
+    {
+        if (!$this->validate([
+            'judul_berita' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Judul berita harus diisi!'
+                ]
+            ],
+            'kategori' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Pilih kategori berita!'
+                ]
+            ],
+            'isi_berita' => [
+                'rules' => 'required',
+                'errors' => [
+                    'required' => 'Isikan isi berita!'
+                ]
+            ]
+        ])) {
+            return redirect()->to('/Berita/update/' . $_POST['id_berita'])->withInput();
+        }
+
+        $this->m_berita->save([
+            'id_berita' => $_POST['id_berita'],
+            'id_kategori_berita' => $_POST['kategori'],
+            'judul_berita' => $_POST['judul_berita'],
+            'isi_berita' => $_POST['isi_berita']
+        ]);
+
+        session()->setFlashdata('message', 'Diubah');
+
+        return redirect()->to('/Berita/detail/' . $_POST['id_berita']);
+    }
+
+    public function delete($id_berita)
+    {
+        $this->m_berita->delete($id_berita);
+        session()->setFlashdata('message', 'Dihapus');
+        return redirect()->to('/Berita');
     }
 }
