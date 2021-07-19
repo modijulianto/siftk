@@ -33,6 +33,8 @@
 
     <!-- Modernizer Script for old Browsers -->
     <script src="/home/js/modernizr-2.6.2.min.js"></script>
+    <!-- Main jQuery -->
+    <script src="/home/js/jquery-1.11.1.min.js"></script>
 </head>
 
 <body id="body">
@@ -54,8 +56,6 @@
 
     <!-- Essential jQuery Plugins
 	================================================== -->
-    <!-- Main jQuery -->
-    <script src="/home/js/jquery-1.11.1.min.js"></script>
     <!-- Single Page Nav -->
     <script src="/home/js/jquery.singlePageNav.min.js"></script>
     <!-- Twitter Bootstrap -->

@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\M_aspirasi;
 use App\Models\M_home;
 
 class Home extends BaseController
 {
 	protected $m_home;
+	protected $m_aspirasi;
 	public function __construct()
 	{
 		$this->m_home = new M_home();
+		$this->m_aspirasi = new M_aspirasi();
 	}
 
 	public function index()
@@ -77,5 +80,16 @@ class Home extends BaseController
 	{
 		$data['title'] = "Sosial Masyarakat | SISTEM INFORMASI BEM FTK UNDIKSHA";
 		return view('Front/Content/sosmas', $data);
+	}
+
+	public function tambah_aspirasi()
+	{
+		// dd($_GET);
+		return $this->m_aspirasi->save([
+			'nama' => $_POST['nama'],
+			'nim' => $_POST['nim'],
+			'keluhan' => $_POST['keluhan'],
+			'aspirasi' => $_POST['isi']
+		]);
 	}
 }

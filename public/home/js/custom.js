@@ -207,12 +207,29 @@ function nextPrev(n) {
     if (n == 1 && !validateForm()) return false;
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
-    if (currentTab >= x.length) {
-
+    if (currentTab == 4) {
         document.getElementById("nextprevious").style.display = "none";
         document.getElementById("all-steps").style.display = "none";
         document.getElementById("register").style.display = "none";
         document.getElementById("text-message").style.display = "block";
+        const name = $('#fname').val();
+        const nim = $('#nim').val();
+        const keluhan = $('#pilih').val();
+        const isi = $('#isi').val();
+        $.ajax({
+            url: 'http://localhost:8080/Home/tambah_aspirasi',
+            data: {
+                nama: name,
+                nim: nim,
+                keluhan: keluhan,
+                isi: isi
+            },
+            method: 'post',
+            dataType: 'json',
+            success: function (respone) {
+                alert('sukses bossque');
+            }
+        });
     }
     showTab(currentTab);
 }

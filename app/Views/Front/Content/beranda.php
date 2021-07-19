@@ -33,15 +33,15 @@
             <!-- end single slide -->
             <!-- Next slide -->
             <!-- <div class="item" style="background-image: url(img/FTK.jpg);">
-            <div class="carousel-caption">						
-                <ul class="social-links text-center">
-                    <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
-                    <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
-                    <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
-                    <li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
-                </ul>
-            </div>
-        </div> -->
+        <div class="carousel-caption">						
+            <ul class="social-links text-center">
+                <li><a href=""><i class="fa fa-twitter fa-lg"></i></a></li>
+                <li><a href=""><i class="fa fa-facebook fa-lg"></i></a></li>
+                <li><a href=""><i class="fa fa-google-plus fa-lg"></i></a></li>
+                <li><a href=""><i class="fa fa-dribbble fa-lg"></i></a></li>
+            </ul>
+        </div>
+    </div> -->
             <!-- end Next slide -->
         </div>
         <!-- End Wrapper for slides -->
@@ -179,15 +179,15 @@
                     </div>
                     <div class="tab">
                         <h6>Hi! Boleh Kenalan Ga? Siapa Namamu?</h6><br>
-                        <p><input placeholder="Nama Lengkap" oninput="this.className = ''" name="fname"></p>
+                        <p><input placeholder="Nama Lengkap" oninput="this.className = ''" name="fname" id="fname"></p>
                     </div>
                     <div class="tab">
                         <h6>NIM Kamu Berapa?</h6><br>
-                        <p><input placeholder="Nomor Induk Mahasiswa" oninput="this.className = ''" name="nim"></p>
+                        <p><input placeholder="Nomor Induk Mahasiswa" oninput="this.className = ''" name="nim" id="nim"></p>
                     </div>
                     <div class="tab">
                         <h6>Tentang Apa Keluhanmu?</h6><br>
-                        <select name="pilih" class="form-control">
+                        <select name="pilih" class="form-control" id="pilih">
                             <option>Perkuliahan</option>
                             <option>Sarana & Prasarana</option>
                             <option>Event</option>
@@ -197,7 +197,7 @@
                     <div class="tab">
                         <h6>Ungkapkan Pendapatmu Disini.</h6><br>
                         <p>
-                            <input class="form-control" oninput="this.className = ''" name="isi" rows="4">
+                            <input class="form-control" oninput="this.className = ''" name="isi" rows="4" id="isi">
                         </p>
                     </div>
                     <div class="thanks-message text-center" id="text-message">
@@ -221,4 +221,10 @@
         </div>
     </div>
 </section>
+
+<script>
+    // $('#isi').on('change', function() {
+    //     alert('awoakowkokaw')
+    // });
+</script>
 <?= $this->endSection('content'); ?>
