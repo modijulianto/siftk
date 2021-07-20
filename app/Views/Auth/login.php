@@ -72,7 +72,7 @@
           <div class="panel-body">
             <?= session()->getFlashdata('message'); ?>
             <div class="text-center">
-              <img src="/img/logo-ftk.png" alt="Logo FTK" width="150px">
+              <a href="/" style="background-color: inherit;"><img src="/img/logo-ftk.png" alt="Logo FTK" width="150px"></a>
             </div>
             <form action="/Auth/login" method="POST" id="loginForm">
               <div class="form-group">

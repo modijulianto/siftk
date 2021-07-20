@@ -31,18 +31,30 @@ class Home extends BaseController
 	public function prestasi()
 	{
 		$data['title'] = "Prestasi | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		$data['prestasi'] = $this->m_home->get_prestasi();
 		return view('Front/Content/prestasi', $data);
 	}
 
 	public function seminar()
 	{
 		$data['title'] = "Seminar | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		$data['seminar'] = $this->m_home->get_seminar();
 		return view('Front/Content/seminar', $data);
 	}
 
 	public function berkas()
 	{
+		if (isset($_GET['cari'])) {
+			$cari = $_GET['cari'];
+			$data['judul'] = "Menampilkan hasil pencarian : <i>" . $cari . "</i>";
+		} else {
+			$cari = null;
+			$data['judul'] = "INFORMASI BERKAS BEM FTK UNDIKSHA";
+		}
+
 		$data['title'] = "Berkas | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		$data['berkas'] = $this->m_home->get_berkas($cari);
+		$data['pager'] = $this->m_home->pager;
 		return view('Front/Content/berkas', $data);
 	}
 

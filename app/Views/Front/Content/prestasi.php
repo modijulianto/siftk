@@ -17,80 +17,21 @@
     <div class="container">
         <div class="row">
             <div class="clearfix">
-                <!-- single blog post -->
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block hover">
-                        <div class="media-wrapper">
-                            <img src="/home/img/FTK.jpg" class="img-responsive">
+                <?php foreach ($prestasi as $row) { ?>
+                    <!-- single blog post -->
+                    <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
+                        <div class="post-block hover">
+                            <div class="media-wrapper">
+                                <img src="/upload/berita/<?= $row['cover']; ?>" class="img-responsive">
+                            </div>
+                            <div class="content text-center">
+                                <h3><b>CONGRATULATION!</b></h3><br>
+                                <p><?= $row['judul_berita']; ?></p>
+                                <br><br><a class="btn1" href="/detail/<?= md5($row['id_berita']); ?>">Read more</a>
+                            </div>
                         </div>
-                        <div class="content text-center">
-                            <h3><b>CONGRATULATION!</b></h3><br>
-                            <p>Selamat atas menangnya ftk dalam ajang lomba</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block">
-                        <div class="media-wrapper">
-                            <img src="/home/img/bem.JPG" class="img-responsive">
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>CONGRATULATION!</b></h3><br>
-                            <p>Selamat atas menangnya ftk dalam ajang lomba</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block">
-                        <div class="media-wrapper">
-                            <img src="/home/img/examplenews.png" class="img-responsive">
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>CONGRATULATION!</b></h3><br>
-                            <p>Selamat atas menangnya ftk dalam ajang lomba</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <!-- /single blog post -->
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block">
-                        <div class="media-wrapper">
-                            <img src="/home/img/FTK.jpg" class="img-responsive">
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>CONGRATULATION!</b></h3><br>
-                            <p>Selamat atas menangnya ftk dalam ajang lomba</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block">
-                        <div class="media-wrapper">
-                            <img src="/home/img/FTK.jpg" class="img-responsive">
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>CONGRATULATION!</b></h3><br>
-                            <p>Selamat atas menangnya ftk dalam ajang lomba</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block">
-                        <div class="media-wrapper">
-                            <img src="/home/img/FTK.jpg" class="img-responsive">
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>CONGRATULATION!</b></h3><br>
-                            <p>Selamat atas menangnya ftk dalam ajang lomba</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                    </articl>
+                    </article>
+                <?php } ?>
             </div>
         </div> <!-- end row -->
     </div> <!-- end container -->

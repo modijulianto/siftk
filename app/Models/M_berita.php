@@ -9,7 +9,7 @@ class M_berita extends Model
     protected $table = 'tb_berita';
     protected $primaryKey = 'id_berita';
     protected $useTimestamps = true;
-    protected $allowedFields = ['id_kategori_berita', 'judul_berita', 'isi_berita'];
+    protected $allowedFields = ['id_kategori_berita', 'judul_berita', 'isi_berita', 'cover', 'tgl_dilaksanakan'];
 
     public function get_berita($id = null)
     {

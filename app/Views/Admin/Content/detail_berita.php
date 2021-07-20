@@ -12,9 +12,12 @@
             <div class="text-left">
                 <h1><?= $berita['judul_berita']; ?></h1>
                 <h5>Kategori : <?= $berita['nama_kategori_berita']; ?></h5>
-                Dibuat pada <?= date('d F Y H.i.s', strtotime($berita['created_at'])); ?>
+                Dibuat pada <?= date('d F Y H.i.s', strtotime($berita['created_at'])); ?><br>
+                Tanggal Dilaksanakan <?= date('d F Y', strtotime($berita['tgl_dilaksanakan'])); ?>
             </div>
-            <?= $berita['isi_berita']; ?>
+            <div style="margin-top: 50px;">
+                <?= $berita['isi_berita']; ?>
+            </div>
             <br>
             <hr>
         </div>

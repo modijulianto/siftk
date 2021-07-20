@@ -35,8 +35,6 @@ class Berita extends BaseController
 
     public function save()
     {
-        // print($_FILES);
-        // dd($_POST);
         if (!$this->validate([
             'judul_berita' => [
                 'rules' => 'required',
@@ -55,15 +53,24 @@ class Berita extends BaseController
                 'errors' => [
                     'required' => 'Isikan isi berita!'
                 ]
+            ],
+            'cover' => [
+                'mime_in[cover,image/jpg,image/jpeg,image/png]',
             ]
         ])) {
             return redirect()->to('/Berita/tambah')->withInput();
         }
 
+        $cover = $this->request->getFile('cover');
+        $coverName = $cover->getRandomName();
+        $cover->move('./upload/berita', $coverName);
+
         $this->m_berita->save([
             'id_kategori_berita' => $_POST['kategori'],
             'judul_berita' => $_POST['judul_berita'],
-            'isi_berita' => $_POST['isi_berita']
+            'isi_berita' => $_POST['isi_berita'],
+            'tgl_dilaksanakan' => $_POST['tgl_dilaksanakan'],
+            'cover' => $coverName
         ]);
         $id_berita = $this->m_berita->getInsertID();
 
@@ -183,11 +190,27 @@ class Berita extends BaseController
             return redirect()->to('/Berita/update/' . $_POST['id_berita'])->withInput();
         }
 
+        $cover = $this->request->getFile('cover');
+        if ($cover->getError() == 4) {
+            $coverName = $_POST['cover_lama'];
+        } else {
+            $coverName = $cover->getRandomName();
+            $cover->move('./upload/berita', $coverName);
+            // Hapus file lama
+            if ($_POST['cover_lama'] != "") {
+                if (file_exists('upload/berita/' . $_POST['cover_lama'])) {
+                    unlink('upload/berita/' . $_POST['cover_lama']);
+                }
+            }
+        }
+
         $this->m_berita->save([
             'id_berita' => $_POST['id_berita'],
             'id_kategori_berita' => $_POST['kategori'],
             'judul_berita' => $_POST['judul_berita'],
-            'isi_berita' => $_POST['isi_berita']
+            'isi_berita' => $_POST['isi_berita'],
+            'tgl_dilaksanakan' => $_POST['tgl_dilaksanakan'],
+            'cover' => $coverName
         ]);
 
         session()->setFlashdata('message', 'Diubah');
@@ -197,6 +220,10 @@ class Berita extends BaseController
 
     public function delete($id_berita)
     {
+        $berita = $this->m_berita->find($id_berita);
+        if (file_exists('upload/berita/' . $berita['cover'])) {
+            unlink('upload/berita/' . $berita['cover']);
+        }
         $this->m_berita->delete($id_berita);
         session()->setFlashdata('message', 'Dihapus');
         return redirect()->to('/Berita');

@@ -17,87 +17,23 @@
     <div class="container">
         <div class="row">
             <div class="clearfix">
-                <!-- single blog post -->
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block hover">
-                        <div class="media-wrapper">
-                            <img src="/home/img/webinar.jpeg" class="img-responsive">
-                            <div class="card-date"><span>11</span><br>Jul</div>
+                <?php foreach ($seminar as $row) { ?>
+                    <!-- single blog post -->
+                    <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
+                        <div class="post-block hover">
+                            <div class="media-wrapper">
+                                <img src="/upload/berita/<?= $row['cover']; ?>" class="img-responsive">
+                                <div class="card-date"><span><?= date('d', strtotime($row['tgl_dilaksanakan'])); ?></span><br><?= date('M', strtotime($row['tgl_dilaksanakan'])); ?></div>
+                            </div>
+                            <div class="content text-center">
+                                <h3><b><?= $row['judul_berita']; ?></b></h3><br>
+                                <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
+                                <br><br><a class="btn1" href="/detail/<?= md5($row['id_berita']); ?>">Read more</a>
+                            </div>
                         </div>
-                        <div class="content text-center">
-                            <h3><b>WEBINAR KEPEMIMPINAN TAHUN 2021</b></h3><br>
-                            <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block hover">
-                        <div class="media-wrapper">
-                            <img src="/home/img/webinar.jpeg" class="img-responsive">
-                            <div class="card-date"><span>17</span><br>Aug</div>
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>WEBINAR KEPEMIMPINAN TAHUN 2021</b></h3><br>
-                            <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block hover">
-                        <div class="media-wrapper">
-                            <img src="/home/img/webinar.jpeg" class="img-responsive">
-                            <div class="card-date"><span>11</span><br>Mar</div>
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>WEBINAR KEPEMIMPINAN TAHUN 2021</b></h3><br>
-                            <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block hover">
-                        <div class="media-wrapper">
-                            <img src="/home/img/webinar.jpeg" class="img-responsive">
-                            <div class="card-date"><span>11</span><br>Jun</div>
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>WEBINAR KEPEMIMPINAN TAHUN 2021</b></h3><br>
-                            <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block hover">
-                        <div class="media-wrapper">
-                            <img src="/home/img/webinar.jpeg" class="img-responsive">
-                            <div class="card-date"><span>11</span><br>Nov</div>
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>WEBINAR KEPEMIMPINAN TAHUN 2021</b></h3><br>
-                            <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-6 col-xs-12 clearfix wow fadeInUp" data-wow-duration="500ms">
-                    <div class="post-block hover">
-                        <div class="media-wrapper">
-                            <img src="/home/img/webinar.jpeg" class="img-responsive">
-                            <div class="card-date"><span>11</span><br>May</div>
-                        </div>
-                        <div class="content text-center">
-                            <h3><b>WEBINAR KEPEMIMPINAN TAHUN 2021</b></h3><br>
-                            <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
-                            <br><br><a class="btn1" href="blog-single.html">Read more</a>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- /single blog post -->
+                    </article>
+                    <!-- /single blog post -->
+                <?php } ?>
             </div>
         </div> <!-- end row -->
     </div> <!-- end container -->

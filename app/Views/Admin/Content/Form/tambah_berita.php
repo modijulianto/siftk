@@ -11,7 +11,7 @@
                             <h1><span class="table-project-n">TAMBAH</span> BERITA</h1>
                         </div>
                     </div>
-                    <form action="/Berita/save_update" method="POST" enctype="multipart/form-data">
+                    <form action="/Berita/save" method="POST" enctype="multipart/form-data">
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
@@ -36,6 +36,36 @@
                                         <?php } ?>
                                     </select>
                                     <font color="red"><?= $validation->getError('kategori'); ?></font>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                    <label for="tgl_dilaksanakan" class="login2">Tanggal Dilaksanakan</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                    <input type="date" name="tgl_dilaksanakan" id="tgl_dilaksanakan" class="form-control" required placeholder="Masukkan judul berita" value="<?= old('tgl_dilaksanakan'); ?>" />
+                                    <font color="red"><?= $validation->getError('tgl_dilaksanakan'); ?></font>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group-inner">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                    <label for="cover" class="login2">Cover</label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
+                                    <div class="file-upload-inner ts-forms">
+                                        <div class="input prepend-big-btn">
+                                            <div class="file-button">
+                                                Browse
+                                                <input type="file" name="cover" id="cover" onchange="document.getElementById('prepend-big-btn').value = this.value;">
+                                            </div>
+                                            <input type="text" id="prepend-big-btn" placeholder="no file selected">
+                                        </div>
+                                    </div>
+                                    <font color="red"><?= $validation->getError('cover'); ?></font>
                                 </div>
                             </div>
                         </div>
