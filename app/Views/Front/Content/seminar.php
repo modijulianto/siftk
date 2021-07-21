@@ -27,7 +27,7 @@
                             </div>
                             <div class="content text-center">
                                 <h3><b><?= $row['judul_berita']; ?></b></h3><br>
-                                <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan</p>
+                                <p>Halo civitas biru dongker Badan Eksekutif Mahasiswa Fakultas Teknik dan Kejuruan dengan bangga mempersembahkan [..]</p>
                                 <br><br><a class="btn1" href="/detail/<?= md5($row['id_berita']); ?>">Read more</a>
                             </div>
                         </div>

@@ -38,4 +38,11 @@ class M_home extends Model
         }
         return $this->paginate(1, 'tb_berkas');
     }
+
+    public function get_detail_berita($id_berita)
+    {
+        return $this->db->table('tb_berita')
+            ->where('md5(id_berita)', $id_berita)
+            ->get()->getRowArray();
+    }
 }

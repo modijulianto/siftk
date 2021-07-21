@@ -43,6 +43,7 @@ $routes->get('/psdm', 'Home::psdm');
 $routes->get('/kerumahtanggaan', 'Home::kerumahtanggaan');
 $routes->get('/sosmas', 'Home::sosmas');
 $routes->get('/berkas', 'Home::berkas');
+$routes->get('/detail/(:any)', 'Home::detail/$1');
 
 // ========== ADMIN ROUTES ==========
 $routes->get('/Dashboard', 'Dashboard::index', ['filter' => 'auth']);
@@ -54,6 +55,7 @@ $routes->get('/Berita', 'Berita::index', ['filter' => 'auth']);
 $routes->get('/Berita/delete/(:any)', 'Berita::delete/$1', ['filter' => 'auth']);
 $routes->get('/Berita/tambah', 'Berita::tambah', ['filter' => 'auth']);
 $routes->get('/Berita/tambah', 'Berita::tambah', ['filter' => 'auth']);
+$routes->get('/Aspirasi', 'Aspirasi::index', ['filter' => 'auth']);
 // ========== END ADMIN ROUTES ==========
 
 /*

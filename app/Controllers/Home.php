@@ -58,9 +58,10 @@ class Home extends BaseController
 		return view('Front/Content/berkas', $data);
 	}
 
-	public function detail()
+	public function detail($id_berita)
 	{
 		$data['title'] = "Detail | SISTEM INFORMASI BEM FTK UNDIKSHA";
+		$data['berita'] = $this->m_home->get_detail_berita($id_berita);
 		return view('Front/Content/detail', $data);
 	}
 
@@ -96,7 +97,6 @@ class Home extends BaseController
 
 	public function tambah_aspirasi()
 	{
-		// dd($_GET);
 		return $this->m_aspirasi->save([
 			'nama' => $_POST['nama'],
 			'nim' => $_POST['nim'],

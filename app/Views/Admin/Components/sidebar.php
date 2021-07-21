@@ -22,10 +22,13 @@
                         </ul>
                     </li>
                     <li>
-                        <a title="Berkas" href="/Berkas" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Berkas</span></a>
+                        <a title="Berkas" href="/Berkas" aria-expanded="false"><i class="fa fa-file-o"></i>&ensp; <span class="mini-click-non">Berkas</span></a>
                     </li>
                     <li>
-                        <a title="Berkas" href="/Berita" aria-expanded="false"><span class="educate-icon educate-data-table icon-wrap sub-icon-mg" aria-hidden="true"></span> <span class="mini-click-non">Berita</span></a>
+                        <a title="Berita" href="/Berita" aria-expanded="false"><i class="fa fa-file"></i>&ensp; <span class="mini-click-non">Berita</span></a>
+                    </li>
+                    <li>
+                        <a title="Aspirasi" href="/Aspirasi" aria-expanded="false"><i class="fa fa-bullhorn"></i>&ensp; <span class="mini-click-non">Aspirasi</span></a>
                     </li>
                 </ul>
             </nav>

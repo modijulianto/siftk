@@ -188,10 +188,10 @@
                     <div class="tab">
                         <h6>Tentang Apa Keluhanmu?</h6><br>
                         <select name="pilih" class="form-control" id="pilih">
-                            <option>Perkuliahan</option>
-                            <option>Sarana & Prasarana</option>
-                            <option>Event</option>
-                            <option>Keuangan</option>
+                            <option value="Perkuliahan">Perkuliahan</option>
+                            <option value="Sarana & Prasarana">Sarana & Prasarana</option>
+                            <option value="Event">Event</option>
+                            <option value="Keuangan">Keuangan</option>
                         </select>
                     </div>
                     <div class="tab">

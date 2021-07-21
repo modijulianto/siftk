@@ -70,7 +70,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="text" name="cover_lama" value="<?= $berita['cover']; ?>">
+                        <input type="hidden" name="cover_lama" value="<?= $berita['cover']; ?>">
                         <div class="form-group-inner">
                             <div class="row">
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">

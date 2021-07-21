@@ -212,10 +212,10 @@ function nextPrev(n) {
         document.getElementById("all-steps").style.display = "none";
         document.getElementById("register").style.display = "none";
         document.getElementById("text-message").style.display = "block";
-        const name = $('#fname').val();
-        const nim = $('#nim').val();
-        const keluhan = $('#pilih').val();
-        const isi = $('#isi').val();
+        var name = $('#fname').val();
+        var nim = $('#nim').val();
+        var keluhan = $('#pilih').val();
+        var isi = $('#isi').val();
         $.ajax({
             url: 'http://localhost:8080/Home/tambah_aspirasi',
             data: {
@@ -226,9 +226,6 @@ function nextPrev(n) {
             },
             method: 'post',
             dataType: 'json',
-            success: function (respone) {
-                alert('sukses bossque');
-            }
         });
     }
     showTab(currentTab);
