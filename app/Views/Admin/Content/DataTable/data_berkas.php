@@ -51,6 +51,7 @@
                                                 <?php } ?>
                                             </td>
                                             <td class="datatable-ct">
+                                                <a href="/upload/<?= $row['berkas']; ?>" download="<?= $row['berkas']; ?>" class="btn btn-info"><i class="fa fa-download" style="color: white;"></i></a>
                                                 <button type="button" class="btn btn-primary tombolUbahBerkas" data-id="<?= $row['id_berkas']; ?>" data-toggle="modal" data-target="#modalBerkas"><i class="fa fa-pencil" style="color: white;"></i></button>
                                                 <button href="/Berkas/delete/<?= $row['id_berkas'] ?>" class="btn btn-danger tombol-hapus"><i class="fa fa-trash" style="color: white;"></i></button>
                                             </td>

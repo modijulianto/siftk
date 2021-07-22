@@ -41,10 +41,10 @@ class Berkas extends BaseController
             ],
             'tahun' => 'required|numeric',
             'status' => 'required',
-            'berkas' => [
-                'rules' => 'mime_in[berkas,application/pdf,application/doc,application/docx]',
-                'errors' => ['mime_in' => 'Upload file berkas berformat <i>.pdf, .doc,</i> atau <i>.docx</i>']
-            ],
+            // 'berkas' => [
+            //     'rules' => 'mime_in[berkas,application/pdf,application/doc,application/docx]',
+            //     'errors' => ['mime_in' => 'Upload file berkas berformat <i>.pdf, .doc,</i> atau <i>.docx</i>']
+            // ],
         ])) {
             return redirect()->to('/Berkas')->withInput();
         }
